@@ -4,7 +4,7 @@ This repository contains supplementary artifacts associated with the anonymized 
 
 **A Layered Federated Architecture for Cyber Threat Intelligence Sharing**
 
-The materials support inspection of the empirical corpus, the sector classification process, and the Monte Carlo robustness results reported in the paper.
+The materials support inspection of the empirical corpus, the sector classification process, and the Monte Carlo robustness analysis reported in the paper.
 
 ## Purpose
 
@@ -12,11 +12,11 @@ The study evaluates a layered federated governance architecture for cyber threat
 
 The empirical evaluation uses public CTI records to examine whether explicit contextual evidence can support selective and auditable sector routing.
 
-The supplementary artifacts are provided to improve transparency and facilitate independent inspection of the data processing, classification results, and robustness analysis.
+The supplementary artifacts are provided to improve transparency, auditability, and reproducibility of the empirical classification and robustness analysis.
 
 ## Repository Contents
 
-### `Inventario_Base_Total_Eventos_Secao_7_1.xlsx`
+### `corpus_inventory.xlsx`
 
 Corpus inventory associated with the empirical evaluation.
 
@@ -25,9 +25,9 @@ The manuscript reports a total of **7,854 processable CTI records**, comprising:
 - 7,850 processable MISP events;
 - 4 CISA STIX advisories.
 
-The inventory is intended to document the records considered in the empirical corpus and their provenance.
+The inventory documents the records considered in the empirical corpus and their provenance.
 
-### `Classificacao_Empirica_N0_N1_N2_N3_Secao_7_3.xlsx`
+### `empirical_sector_classification.xlsx`
 
 Empirical classification artifact associated with the layered architecture.
 
@@ -44,9 +44,23 @@ Unresolved records are not treated as irrelevant. Their status indicates only th
 
 Any N2 or N3 information in the classification artifact represents proposed downstream treatment or routing possibilities. It must not be interpreted as an observed delivery, an operational recipient, or an empirically validated N2 or N3 destination.
 
+### `monte_carlo.py`
+
+Python script used to reproduce the Monte Carlo robustness analysis reported in the paper.
+
+The script contains:
+
+- the reference scenario indicators for the centralized and federated architectures;
+- the Dirichlet concentration parameters for the five weighting regimes;
+- the simulation procedure;
+- 100,000 replications per weighting regime;
+- generation of the detailed Monte Carlo results file.
+
+The architecture indicator values are predefined scenario parameters and must not be interpreted as direct empirical measurements of operational CTI network performance.
+
 ### `monte_carlo_results.csv`
 
-Detailed results of the Monte Carlo robustness analysis.
+Detailed numerical results of the Monte Carlo robustness analysis.
 
 The experiment evaluates whether the modeled utility ordering between the federated and centralized architectures remains stable under uncertainty in the criterion weights.
 
@@ -57,8 +71,6 @@ Five weighting regimes are considered:
 3. Context and actionability priority
 4. Exposure control priority
 5. Latency and noise priority
-
-The analysis uses **100,000 independent replications per weighting regime**.
 
 For each regime, the file reports:
 
@@ -78,7 +90,7 @@ where:
 - `Uf` is the modeled utility of the federated architecture;
 - `Uc` is the modeled utility of the centralized architecture.
 
-The architecture indicator values used in the Monte Carlo analysis are scenario parameters. The simulation results must therefore not be interpreted as direct empirical measurements of operational CTI network performance.
+The simulation results must not be interpreted as direct empirical measurements of operational CTI network performance.
 
 ## Empirical Sector Domains
 
@@ -162,20 +174,24 @@ The centralized baseline represents complete distribution of 7,854 records to th
 
 This value represents a dissemination surface used as an analytical baseline. It is not a measurement of observed network traffic, transferred bytes, analyst workload, or operational activity.
 
-Similarly, sector associations represent evidence supported routing eligibility. They are not observed messages or defensive actions.
+Similarly, sector associations represent routing eligibility supported by explicit evidence. They are not observed messages or defensive actions.
 
 The empirical evaluation directly examines N1 sector classification. Selection among specific N2 and N3 recipients is outside the scope of the evaluated dataset.
 
 ## Reproducibility and Auditability
 
-The corpus inventory and empirical classification workbook are provided to support inspection of the records and the evidence associated with the reported classification results.
+The corpus inventory and empirical classification workbook support independent inspection of the records and the evidence associated with the reported sector assignments.
 
-The Monte Carlo results file provides the detailed numerical outputs reported in the robustness analysis.
+The Monte Carlo script contains the reference scenario indicators, the Dirichlet concentration parameters defining the five weighting regimes, and the simulation procedure used in the robustness analysis.
+
+The Monte Carlo results file provides the detailed numerical outputs reported in the paper.
+
+Together, these artifacts support independent inspection of the empirical classification and reproduction of the Monte Carlo robustness analysis.
 
 Independent analysis should preserve the methodological distinction between:
 
 - observed source records;
-- evidence supported N1 sector associations;
+- N1 sector associations supported by explicit evidence;
 - proposed downstream routing possibilities;
 - modeled architecture utility.
 
@@ -186,10 +202,6 @@ These categories should not be interpreted as equivalent operational measurement
 The repository is intended to accompany an anonymized submission.
 
 The supplementary materials do not intentionally identify the authors or their institutional affiliations.
-
-### "monte_carlo.py"
-
-Python script used to reproduce the Monte Carlo robustness analysis reported in the paper. The script contains the reference scenario indicators, the Dirichlet parameters for the five weighting regimes, and the simulation procedure with 100,000 replications per regime.
 
 ## Status
 
