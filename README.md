@@ -158,7 +158,7 @@ The public corpus is used to evaluate the classification mechanism. It does not 
 
 The supplementary materials should be interpreted according to the scope of the paper.
 
-The centralized baseline represents complete distribution of 7,854 records to 27 analytical recipients, producing 212,058 deliveries.
+The centralized baseline represents complete distribution of 7,854 records to the 27 Courts of Justice in the Brazilian state judiciary, producing 212,058 deliveries.
 
 This value represents a dissemination surface used as an analytical baseline. It is not a measurement of observed network traffic, transferred bytes, analyst workload, or operational activity.
 
@@ -186,6 +186,10 @@ These categories should not be interpreted as equivalent operational measurement
 The repository is intended to accompany an anonymized submission.
 
 The supplementary materials do not intentionally identify the authors or their institutional affiliations.
+
+### "monte_carlo.py"
+
+Python script used to reproduce the Monte Carlo robustness analysis reported in the paper. The script contains the reference scenario indicators, the Dirichlet parameters for the five weighting regimes, and the simulation procedure with 100,000 replications per regime.
 
 ## Status
 
