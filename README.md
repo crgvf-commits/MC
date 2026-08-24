@@ -25,6 +25,18 @@ The manuscript reports a total of **7,854 processable CTI records**, comprising:
 - 7,850 processable MISP events;
 - 4 CISA STIX advisories.
 
+The MISP portion of the corpus contains events from six public feeds:
+
+| Feed | Events |
+|------|-------:|
+| CIRCL OSINT Feed | 1,661 |
+| ThreatFox | 1,940 |
+| URLhaus | 1,895 |
+| MalwareBazaar | 1,876 |
+| The Botvrij.eu Data | 434 |
+| Infoblox Threat Intelligence | 44 |
+| **Total MISP** | **7,850** |
+
 The inventory documents the records considered in the empirical corpus and their provenance.
 
 ### `empirical_sector_classification.xlsx`
@@ -153,7 +165,17 @@ Multiple sector associations are retained when the available evidence explicitly
 
 The empirical corpus described in the manuscript is based on public CTI material.
 
-The primary source is the CIRCL MISP OSINT feed.
+The MISP portion of the corpus contains **7,850 processable events from six public feeds**:
+
+| Feed | Events |
+|------|-------:|
+| CIRCL OSINT Feed | 1,661 |
+| ThreatFox | 1,940 |
+| URLhaus | 1,895 |
+| MalwareBazaar | 1,876 |
+| The Botvrij.eu Data | 434 |
+| Infoblox Threat Intelligence | 44 |
+| **Total** | **7,850** |
 
 The corpus also contains four CISA advisories available as STIX reports:
 
@@ -162,7 +184,9 @@ The corpus also contains four CISA advisories available as STIX reports:
 - AA23-352A, Play Ransomware;
 - AA25-141B, LummaC2.
 
-Nine additional manifest references without retrievable event payloads were excluded from processing, as described in the manuscript.
+Nine manifest references without retrievable event payloads were excluded from processing.
+
+The `corpus_inventory.xlsx` artifact provides the provenance of the records considered in the empirical evaluation.
 
 The public corpus is used to evaluate the classification mechanism. It does not reproduce the sensitivity, legal restrictions, or organizational conditions of an operational government CTI network.
 
