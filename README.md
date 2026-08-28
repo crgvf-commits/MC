@@ -33,8 +33,8 @@ The repository contains the following files:
 ```text
 README.md
 requirements.txt
-corpus_inventory_EN.xlsx
-empirical_sector_classification_EN.xlsx
+corpus_inventory.xlsx
+empirical_sector_classification.xlsx
 monte_carlo.py
 monte_carlo_results.csv
 monte_carlo_results.xlsx
