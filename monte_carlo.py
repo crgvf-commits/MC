@@ -178,7 +178,7 @@ def main():
             })
 
     print()
-    print("Monte Carlo robustness analysis")
+    print("Monte Carlo sensitivity analysis")
     print(f"Seed: {SEED}")
     print(f"Replications per regime: {N_REPLICATIONS:,}")
     print()
